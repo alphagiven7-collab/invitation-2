@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitation | Mutaka & Lutumba</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;700&family=Parisienne&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f4f0f0;
+      --text: #151515;
+      --muted: #5f5f5f;
+      --line: #d6cfcf;
+      --accent: #1f9daa;
+      --danger: #a70000;
+      --later: #2a2a31;
+      --card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      background: radial-gradient(circle at top right, #f8f6f6, var(--bg));
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .container {
+      width: min(100%, 780px);
+      margin: 0 auto;
+      padding: 20px 14px 60px;
+    }
+
+    .hero {
+      border-radius: 0;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 22px 42px rgba(0, 0, 0, 0.15);
+      margin-bottom: 22px;
+    }
+
+    .hero img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center;
+      filter: contrast(1.04);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.08) 55%);
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      text-align: center;
+      padding: clamp(14px, 4vw, 26px) clamp(12px, 4vw, 18px);
+    }
+
+    .hero-names {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.4rem, 9vw, 4.2rem);
+      color: #fff;
+      line-height: 0.92;
+      letter-spacing: 0.08rem;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      font-weight: 700;
+      text-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    }
+
+    .hero-date {
+      color: #f4f4f4;
+      font-size: 0.9rem;
+      letter-spacing: 0.14rem;
+      text-transform: uppercase;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid #efe8e8;
+      border-radius: 24px;
+      padding: 24px 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 10px 28px rgba(22, 15, 15, 0.06);
+    }
+
+    h2 {
+      font-family: "Cormorant Garamond", serif;
+      text-transform: uppercase;
+      letter-spacing: 0.22rem;
+      font-size: clamp(1.15rem, 4.8vw, 1.35rem);
+      margin-bottom: 14px;
+      text-align: center;
+    }
+
+    .script {
+      font-family: "Parisienne", cursive;
+      font-size: clamp(2rem, 7.2vw, 3rem);
+      text-align: center;
+      margin-bottom: 14px;
+      color: #1e1e1e;
+      line-height: 1.1;
+    }
+
+    .lead {
+      text-align: center;
+      color: var(--muted);
+      font-size: clamp(0.88rem, 3.5vw, 0.95rem);
+      margin-bottom: 14px;
+    }
+
+    .line {
+      width: 100%;
+      max-width: 320px;
+      height: 1px;
+      background: var(--line);
+      margin: 12px auto 18px;
+    }
+
+    .save-date-card {
+      position: relative;
+      overflow: hidden;
+      background: #f6f2f2;
+    }
+
+    .save-date-card::before,
+    .save-date-card::after {
+      position: absolute;
+      font-family: "Cormorant Garamond", serif;
+      color: #d8d0d0;
+      opacity: 0.55;
+      z-index: 0;
+      line-height: 0.8;
+      pointer-events: none;
+    }
+
+    .save-date-card::before {
+      content: "M";
+      left: -16px;
+      bottom: -58px;
+      font-size: 230px;
+    }
+
+    .save-date-card::after {
+      content: "V";
+      right: -18px;
+      top: -58px;
+      font-size: 230px;
+    }
+
+    .save-date-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .month-title {
+      text-align: center;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2rem;
+      letter-spacing: 0.23rem;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .calendar-head,
+    .calendar-days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 2px;
+      max-width: 360px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .calendar-head span {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #2f2f2f;
+    }
+
+    .calendar-days span {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.02rem;
+      line-height: 1.3;
+      color: #161616;
+      position: relative;
+      height: 54px;
+      display: grid;
+      place-items: center;
+    }
+
+    .calendar-days .heart {
+      overflow: visible;
+    }
+
+    .calendar-days .heart::before {
+      content: "♡";
+      position: absolute;
+      font-size: 3.15rem;
+      top: -14px;
+      color: #a99e9e;
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 400;
+    }
+
+    .calendar-days .heart::after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 34px;
+      background: #b8abab;
+      top: 48px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .save-script {
+      text-align: center;
+      font-family: "Parisienne", cursive;
+      font-size: clamp(3.2rem, 10vw, 4.3rem);
+      color: #181818;
+      line-height: 0.95;
+      margin: 44px 0 30px;
+    }
+
+    .couple-name {
+      text-align: center;
+      font-size: 2rem;
+      font-family: "Cormorant Garamond", serif;
+      letter-spacing: 0.16rem;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .family-list p {
+      text-align: center;
+      margin-bottom: 8px;
+      font-size: 0.98rem;
+    }
+
+    .family-list strong {
+      font-weight: 600;
+      letter-spacing: 0.04rem;
+    }
+
+    .program-card {
+      position: relative;
+      overflow: hidden;
+      padding: 0;
+      border: none;
+      background: transparent;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .program-content {
+      position: relative;
+      z-index: 0;
+    }
+
+    .program-list {
+      display: block;
+    }
+
+    .program-event {
+      text-align: center;
+      border-radius: 0;
+      overflow: hidden;
+      position: relative;
+      height: clamp(145px, 36vw, 190px);
+      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.16);
+    }
+
+    .program-icon {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 0;
+      overflow: hidden;
+      margin: 0;
+      box-shadow: none;
+    }
+
+    .program-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: none;
+    }
+
+    .program-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.48) 52%, rgba(0, 0, 0, 0.22));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 10px 12px;
+    }
+
+    .program-title {
+      color: #fff;
+      text-align: center;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(0.85rem, 3.2vw, 1rem);
+      letter-spacing: 0.1rem;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+
+    .program-type {
+      font-size: clamp(1.45rem, 6.5vw, 2rem);
+      line-height: 0.9;
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 700;
+      margin-bottom: 3px;
+      color: #fff;
+      text-shadow: 0 4px 14px rgba(0, 0, 0, 0.32);
+    }
+
+    .program-address {
+      color: #f4f4f4;
+      font-size: clamp(0.68rem, 2.8vw, 0.82rem);
+      line-height: 1.25;
+      max-width: 92%;
+      margin: 0 auto;
+      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.32);
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .count-item {
+      background: #fcf9f9;
+      border: 1px solid #eadfdf;
+      border-radius: 14px;
+      text-align: center;
+      padding: 12px 8px;
+    }
+
+    .count-item span {
+      display: block;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.9rem;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+
+    .count-item small {
+      text-transform: uppercase;
+      letter-spacing: 0.07rem;
+      font-size: 0.67rem;
+      color: #6b6464;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .dress-card h2 {
+      margin-bottom: 8px;
+    }
+
+    .dress-subtitle {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 16px;
+    }
+
+    .dress-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .dress-item {
+      background: #fcfafa;
+      border: 1px solid #ebe2e2;
+      border-radius: 16px;
+      padding: 10px;
+    }
+
+    .dress-label {
+      text-align: center;
+      font-family: "Cormorant Garamond", serif;
+      text-transform: uppercase;
+      letter-spacing: 0.12rem;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .dress-item img {
+      width: 100%;
+      border-radius: 12px;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .dress-note {
+      margin-top: 9px;
+      text-align: center;
+      color: #4f4f4f;
+      font-size: 0.9rem;
+    }
+
+    .rsvp-card h2 {
+      margin-bottom: 10px;
+    }
+
+    .rsvp-title {
+      text-align: center;
+      font-size: 0.92rem;
+      letter-spacing: 0.1rem;
+      text-transform: uppercase;
+      color: #5f5959;
+      margin-bottom: 18px;
+    }
+
+    .input {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid #d6cdcd;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+      background: #fff;
+    }
+
+    .btn-group {
+      display: grid;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .btn {
+      border: none;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.02rem;
+      padding: 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: transform 0.18s ease, opacity 0.18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.96;
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn-confirm {
+      background: var(--accent);
+    }
+
+    .btn-decline {
+      background: var(--danger);
+    }
+
+    .btn-later {
+      background: var(--later);
+    }
+
+    .message {
+      margin-top: 14px;
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-size: 0.93rem;
+      display: none;
+    }
+
+    .message.success {
+      display: block;
+      background: #e7f7f5;
+      color: #0e746f;
+      border: 1px solid #bce4df;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.82rem;
+      color: #777070;
+      margin-top: 18px;
+    }
+
+    @media (min-width: 700px) {
+      .gallery {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .dress-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .countdown {
+        max-width: 560px;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 699px) {
+      .container {
+        width: 100%;
+        padding: 10px 10px 36px;
+      }
+
+      .hero {
+        margin-bottom: 10px;
+      }
+
+      .hero-date {
+        letter-spacing: 0.07rem;
+      }
+
+      .card {
+        margin-bottom: 10px;
+        border-radius: 16px;
+        padding: 16px 12px;
+      }
+
+      .program-card {
+        border-radius: 0;
+        padding: 0;
+      }
+
+      .countdown {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero-names {
+        font-size: clamp(2rem, 10vw, 2.45rem);
+      }
+
+      .month-title {
+        letter-spacing: 0.14rem;
+      }
+
+      .calendar-days span {
+        font-size: 1.7rem;
+      }
+
+      .program-event {
+        height: 132px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <img src="C:/Users/AL/.cursor/projects/z-projets-nouveau-nv/assets/c__Users_AL_AppData_Roaming_Cursor_User_workspaceStorage_d9de3e80e3f50c4c29769013cbf244b1_images__GLN9386.jpg-02bdd59d-eb0f-4ddd-8753-66ef3c92f055.png" alt="Photo du couple">
+      <div class="hero-overlay">
+        <div>
+          <h1 class="hero-names">Manassé &<br>Vainqueur</h1>
+          <p class="hero-date">Samedi 18 juillet 2026</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card save-date-card">
+      <div class="save-date-content">
+        <h2 class="month-title">Juillet</h2>
+        <div class="calendar-head">
+          <span>Lun</span><span>Mar</span><span>Mer</span><span>Jeu</span><span>Ven</span><span>Sam</span><span>Dim</span>
+        </div>
+        <div class="calendar-days">
+          <span>15</span><span>16</span><span>17</span><span class="heart">18</span><span>19</span><span>20</span><span>21</span>
+        </div>
+        <p class="save-script">Save the date</p>
+        <p class="lead">Les familles Mutaka et Lutumba ont le réel plaisir de vous convier au mariage de leurs enfants.</p>
+        <p class="couple-name">Manassé <span>&</span> Vainqueur</p>
+        <div class="line"></div>
+        <p class="lead">qui sera célébré le <strong>18 juillet 2026</strong></p>
+        <p class="lead">Parce que nous nous aimons, parce que nous avons décidé de nous dire oui, parce qu'il est temps maintenant.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Compte à rebours</h2>
+      <p class="dress-subtitle">Plus que quelques instants avant le grand jour.</p>
+      <div class="countdown" id="countdown">
+        <div class="count-item">
+          <span id="cdDays">00</span>
+          <small>Jours</small>
+        </div>
+        <div class="count-item">
+          <span id="cdHours">00</span>
+          <small>Heures</small>
+        </div>
+        <div class="count-item">
+          <span id="cdMinutes">00</span>
+          <small>Minutes</small>
+        </div>
+        <div class="count-item">
+          <span id="cdSeconds">00</span>
+          <small>Secondes</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="card program-card">
+      <div class="program-content">
+        <div class="program-list">
+          <article class="program-event">
+            <div class="program-icon" aria-hidden="true">
+              <img src="C:/Users/AL/.cursor/projects/z-projets-nouveau-nv/assets/c__Users_AL_AppData_Roaming_Cursor_User_workspaceStorage_d9de3e80e3f50c4c29769013cbf244b1_images__GLN9398.jpg-9cc2988c-cc3a-4ac2-86a6-70721bb3fc3c.png" alt="Couple">
+            </div>
+            <div class="program-overlay">
+              <div>
+                <h2 class="program-title">Programme</h2>
+                <p class="program-type">Soirée</p>
+                <p class="program-address">Croisement avenue Figuier et des Plaines, quartier Bel-Air C/Kampemba, Figuier numéro 15.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Notre Galerie</h2>
+      <div class="gallery">
+        <img src="C:/Users/AL/.cursor/projects/z-projets-nouveau-nv/assets/c__Users_AL_AppData_Roaming_Cursor_User_workspaceStorage_d9de3e80e3f50c4c29769013cbf244b1_images__GLN9386.jpg-02bdd59d-eb0f-4ddd-8753-66ef3c92f055.png" alt="Photo galerie 1">
+        <img src="C:/Users/AL/.cursor/projects/z-projets-nouveau-nv/assets/c__Users_AL_AppData_Roaming_Cursor_User_workspaceStorage_d9de3e80e3f50c4c29769013cbf244b1_images__GLN9415.jpg-291f5382-84f7-4b98-b8ff-af24e7ef639e.png" alt="Photo galerie 2">
+        <img src="C:/Users/AL/.cursor/projects/z-projets-nouveau-nv/assets/c__Users_AL_AppData_Roaming_Cursor_User_workspaceStorage_d9de3e80e3f50c4c29769013cbf244b1_images__GLN9398.jpg-9cc2988c-cc3a-4ac2-86a6-70721bb3fc3c.png" alt="Photo galerie 3">
+      </div>
+    </section>
+
+    <section class="card dress-card">
+      <h2>Motif attendu</h2>
+      <p class="dress-subtitle">Voici les motifs recommandés pour chaque côté.</p>
+      <div class="dress-grid">
+        <article class="dress-item">
+          <p class="dress-label">Côté homme</p>
+          <img src="C:/Users/AL/.cursor/projects/z-projets-nouveau-nv/assets/c__Users_AL_AppData_Roaming_Cursor_User_workspaceStorage_d9de3e80e3f50c4c29769013cbf244b1_images_WhatsApp_Image_2026-06-25_at_15.00.39-265a877f-fa76-44ab-a5de-d949f98a2868.png" alt="Motif vestimentaire côté homme">
+          <p class="dress-note">Tenue recommandée : Wax motif homme</p>
+        </article>
+        <article class="dress-item">
+          <p class="dress-label">Côté femme</p>
+          <img src="C:/Users/AL/.cursor/projects/z-projets-nouveau-nv/assets/c__Users_AL_AppData_Roaming_Cursor_User_workspaceStorage_d9de3e80e3f50c4c29769013cbf244b1_images_WhatsApp_Image_2026-06-25_at_15.02.42-3374fa31-dae1-4607-8d45-d9fad09c4c10.png" alt="Motif vestimentaire côté femme">
+          <p class="dress-note">Tenue recommandée : Wax motif femme</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="card rsvp-card">
+      <h2>RSVP</h2>
+      <p class="rsvp-title">Veuillez cliquer ci-dessous pour répondre</p>
+      <input id="guestName" class="input" type="text" placeholder="Votre nom complet">
+      <div class="btn-group">
+        <button class="btn btn-confirm" data-choice="Je confirme ma présence">Je confirme ma présence</button>
+        <button class="btn btn-decline" data-choice="Je ne pourrai pas être présent">Je ne pourrai pas être présent</button>
+        <button class="btn btn-later" data-choice="Je vais confirmer plus tard">Je vais confirmer plus tard</button>
+      </div>
+      <div id="responseMessage" class="message"></div>
+      <p class="footer-note">Après validation, vous serez redirigé vers WhatsApp pour envoyer votre confirmation.</p>
+    </section>
+  </main>
+
+  <script>
+    const buttons = document.querySelectorAll(".btn");
+    const guestNameInput = document.getElementById("guestName");
+    const messageBox = document.getElementById("responseMessage");
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const guestName = guestNameInput.value.trim();
+        const choice = button.getAttribute("data-choice");
+        if (!guestName) {
+          messageBox.className = "message";
+          messageBox.style.display = "block";
+          messageBox.style.background = "#fdecec";
+          messageBox.style.color = "#a12a2a";
+          messageBox.style.border = "1px solid #f2c3c3";
+          messageBox.textContent = "Veuillez saisir votre nom complet avant de confirmer.";
+          return;
+        }
+
+        const rsvpText = `${guestName} : ${choice}`;
+        const whatsappNumber = "243000000000";
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+          "RSVP Mariage Coutumier - " + rsvpText
+        )}`;
+
+        messageBox.className = "message success";
+        messageBox.style.display = "";
+        messageBox.style.background = "";
+        messageBox.style.color = "";
+        messageBox.style.border = "";
+        messageBox.textContent = `Merci ${guestName}, redirection vers WhatsApp...`;
+        window.open(whatsappUrl, "_blank");
+      });
+    });
+
+    const targetDate = new Date("2026-07-18T00:00:00");
+    const cdDays = document.getElementById("cdDays");
+    const cdHours = document.getElementById("cdHours");
+    const cdMinutes = document.getElementById("cdMinutes");
+    const cdSeconds = document.getElementById("cdSeconds");
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate.getTime() - now.getTime();
+
+      if (diff <= 0) {
+        cdDays.textContent = "00";
+        cdHours.textContent = "00";
+        cdMinutes.textContent = "00";
+        cdSeconds.textContent = "00";
+        return;
+      }
+
+      const totalSeconds = Math.floor(diff / 1000);
+      const days = Math.floor(totalSeconds / (24 * 60 * 60));
+      const hours = Math.floor((totalSeconds % (24 * 60 * 60)) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      cdDays.textContent = String(days).padStart(2, "0");
+      cdHours.textContent = String(hours).padStart(2, "0");
+      cdMinutes.textContent = String(minutes).padStart(2, "0");
+      cdSeconds.textContent = String(seconds).padStart(2, "0");
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
