@@ -37,11 +37,17 @@
       padding: 0;
     }
 
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
     body {
       font-family: "Montserrat", sans-serif;
       background: radial-gradient(circle at top right, #f8f6f6, var(--bg));
       color: var(--text);
       line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     .container {
@@ -243,7 +249,17 @@
       font-size: clamp(3.2rem, 10vw, 4.3rem);
       color: #181818;
       line-height: 0.95;
-      margin: 44px 0 30px;
+      margin: 44px 0 8px;
+    }
+
+    .save-subnote {
+      text-align: center;
+      font-family: "Cormorant Garamond", serif;
+      text-transform: uppercase;
+      letter-spacing: 0.08rem;
+      font-size: 1.02rem;
+      color: #4f4a4a;
+      margin-bottom: 22px;
     }
 
     .couple-name {
@@ -413,6 +429,7 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 12px;
+      align-items: stretch;
     }
 
     .dress-item {
@@ -420,6 +437,9 @@
       border: 1px solid #ebe2e2;
       border-radius: 16px;
       padding: 10px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
 
     .dress-label {
@@ -437,6 +457,7 @@
       aspect-ratio: 3 / 2;
       object-fit: cover;
       object-position: center;
+      display: block;
     }
 
     .dress-note {
@@ -444,6 +465,16 @@
       text-align: center;
       color: #4f4f4f;
       font-size: 0.9rem;
+    }
+
+    @media (max-width: 560px) {
+      .dress-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dress-item img {
+        aspect-ratio: 4 / 3;
+      }
     }
 
     .rsvp-card h2 {
@@ -567,6 +598,40 @@
       line-height: 1.35;
     }
 
+    @page {
+      size: A4;
+      margin: 10mm;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .container {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+      }
+
+      .hero,
+      .card,
+      .program-event {
+        box-shadow: none !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .program-event {
+        height: 170px;
+      }
+
+      .btn {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -591,6 +656,7 @@
           <span>15</span><span>16</span><span>17</span><span class="heart">18</span><span>19</span><span>20</span><span>21</span>
         </div>
         <p class="save-script">Save the date</p>
+        <p class="save-subnote">Au mariage coutumier</p>
         <p class="lead">Les familles Mutaka et Lutumba ont le réel plaisir de vous convier au mariage de leurs enfants.</p>
         <p class="couple-name">Manassé <span>&</span> Vainqueur</p>
         <div class="line"></div>
