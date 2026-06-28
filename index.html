@@ -370,6 +370,81 @@
       text-shadow: 0 4px 10px rgba(0, 0, 0, 0.32);
     }
 
+    .program-map-btn {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 6px 14px;
+      background: rgba(255,255,255,0.18);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 999px;
+      color: #fff;
+      font-size: clamp(0.65rem, 2.6vw, 0.78rem);
+      text-decoration: none;
+      letter-spacing: 0.04rem;
+      transition: background 0.2s ease;
+    }
+
+    .program-map-btn:hover {
+      background: rgba(255,255,255,0.32);
+    }
+
+    .program-map-icon {
+      font-size: 1rem;
+      margin-right: 4px;
+    }
+
+    .program-details-card {
+      background: var(--card);
+      border: 1px solid #efe8e8;
+      border-radius: 18px;
+      padding: 16px 14px;
+      margin-top: 12px;
+      box-shadow: 0 6px 18px rgba(22, 15, 15, 0.06);
+    }
+
+    .program-detail-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid #f0eaea;
+    }
+
+    .program-detail-item:last-child {
+      border-bottom: none;
+    }
+
+    .detail-icon {
+      flex-shrink: 0;
+      line-height: 1.4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      color: var(--accent);
+    }
+
+    .detail-text {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.85rem;
+      line-height: 1.35;
+    }
+
+    .detail-text strong {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08rem;
+      color: var(--muted);
+      margin-bottom: 1px;
+    }
+
+    .detail-text span {
+      color: var(--text);
+    }
+
     .countdown {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -452,13 +527,20 @@
       margin-bottom: 10px;
     }
 
-    .dress-item img {
+    .dress-img-wrap {
       width: 100%;
       border-radius: 12px;
+      overflow: hidden;
       aspect-ratio: 3 / 2;
+    }
+
+    .dress-item img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       object-position: center;
       display: block;
+      transform: scale(1.15);
     }
 
     .dress-note {
@@ -473,7 +555,7 @@
         grid-template-columns: 1fr;
       }
 
-      .dress-item img {
+      .dress-img-wrap {
         aspect-ratio: 4 / 3;
       }
     }
@@ -623,6 +705,11 @@
         page-break-inside: avoid;
       }
 
+      .hero img {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
       .program-event {
         height: 170px;
       }
@@ -638,7 +725,7 @@
 <body>
   <main class="container">
     <section class="hero">
-      <img src="./assets/hero-couple.png" alt="Photo du couple">
+      <img src="./assets/gallery-2.png" alt="Photo du couple">
       <div class="hero-overlay">
         <div>
           <h1 class="hero-names">Manassé &<br>Vainqueur</h1>
@@ -701,9 +788,42 @@
                 <h2 class="program-title">Programme</h2>
                 <p class="program-type">Soirée</p>
                 <p class="program-address">Croisement avenue Figuier et des Plaines, quartier Bel-Air C/Kampemba, Figuier numéro 15.</p>
+                <a class="program-map-btn" href="https://www.google.com/maps/search/?api=1&query=Croisement+avenue+Figuier+et+des+Plaines+Bel-Air+Kampemba+Lubumbashi" target="_blank" rel="noopener">
+                  <svg class="program-map-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Voir sur Google Maps
+                </a>
               </div>
             </div>
           </article>
+        </div>
+        <div class="program-details-card">
+          <div class="program-detail-item">
+            <span class="detail-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </span>
+            <div class="detail-text">
+              <strong>Horaire</strong>
+              <span>18 juillet 2026 — Soirée</span>
+            </div>
+          </div>
+          <div class="program-detail-item">
+            <span class="detail-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <div class="detail-text">
+              <strong>Lieu</strong>
+              <span>Figuier n°15, Q/Bel-Air, C/Kampemba, Lubumbashi</span>
+            </div>
+          </div>
+          <div class="program-detail-item">
+            <span class="detail-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </span>
+            <div class="detail-text">
+              <strong>Tenue</strong>
+              <span>Tenue de soirée / Wax recommandé</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -723,12 +843,16 @@
       <div class="dress-grid">
         <article class="dress-item">
           <p class="dress-label">Côté homme</p>
-          <img src="./assets/motif-homme.png" alt="Motif vestimentaire côté homme">
+          <div class="dress-img-wrap">
+            <img src="./assets/motif-homme.png" alt="Motif vestimentaire côté homme">
+          </div>
           <p class="dress-note">Tenue recommandée : Wax motif homme</p>
         </article>
         <article class="dress-item">
           <p class="dress-label">Côté femme</p>
-          <img src="./assets/motif-femme.png" alt="Motif vestimentaire côté femme">
+          <div class="dress-img-wrap">
+            <img src="./assets/motif-femme.png" alt="Motif vestimentaire côté femme">
+          </div>
           <p class="dress-note">Tenue recommandée : Wax motif femme</p>
         </article>
       </div>
@@ -757,9 +881,25 @@
       <div id="responseMessage" class="message"></div>
       <p class="footer-note">Merci de confirmer votre présence avec bienveillance. Votre message sera transmis au contact sélectionné.</p>
     </section>
+
+    <div style="text-align:center;padding:0 20px 16px;">
+      <button id="pdfDownloadBtn" style="background:var(--accent,#1f9daa);color:#fff;border:none;border-radius:999px;padding:10px 22px;font-size:0.82rem;font-weight:500;font-family:'Montserrat',sans-serif;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:transform 0.18s ease,opacity 0.18s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Télécharger en PDF
+      </button>
+    </div>
+
+    <footer style="text-align:center;padding:24px 16px 12px;font-size:0.72rem;color:#999292;line-height:1.4;">
+      <p style="margin:0;">Créé avec <span style="color:#d44;">❤</span> par l'équipe <a href="https://invitation-mariage-orcin.vercel.app/" target="_blank" rel="noopener" style="color:#1f9daa;text-decoration:none;font-weight:500;">Golden Web</a></p>
+      <p style="margin:4px 0 0;">Invitation de mariage — Manassé & Vainqueur</p>
+    </footer>
   </main>
 
   <script>
+    document.getElementById("pdfDownloadBtn").addEventListener("click", () => {
+      window.print();
+    });
+
     const buttons = document.querySelectorAll(".btn");
     const guestNameInput = document.getElementById("guestName");
     const messageBox = document.getElementById("responseMessage");
