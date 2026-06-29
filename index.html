@@ -526,6 +526,30 @@
       gap: 0;
     }
 
+    .dress-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 16px 24px;
+      background: #fcfafa;
+    }
+
+    .dress-divider::before,
+    .dress-divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #d6cfcf, transparent);
+    }
+
+    .dress-divider-icon {
+      font-family: "Parisienne", cursive;
+      font-size: 1.4rem;
+      color: #b8abab;
+      line-height: 1;
+    }
+
     .dress-item {
       position: relative;
       overflow: hidden;
@@ -893,6 +917,9 @@
             <p class="dress-note">Tenue recommandée : Wax motif homme</p>
           </div>
         </article>
+        <div class="dress-divider">
+          <span class="dress-divider-icon">&</span>
+        </div>
         <article class="dress-item">
           <div class="dress-img-wrap">
             <img src="./assets/motif-femme.png" alt="Motif vestimentaire côté femme">
