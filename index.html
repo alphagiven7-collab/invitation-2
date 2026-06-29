@@ -506,18 +506,8 @@
       margin-bottom: 0;
     }
 
-    .dress-card h2 {
-      margin-bottom: 6px;
-      padding-top: 24px;
-    }
-
-    .dress-subtitle {
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.92rem;
-      margin-bottom: 22px;
-      font-style: italic;
-      padding: 0 20px;
+    .dress-card {
+      margin-top: -16px;
     }
 
     .dress-grid {
@@ -581,9 +571,35 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: end;
       text-align: center;
       padding: 20px 16px;
+    }
+
+    .dress-overlay--top {
+      justify-content: start;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1) 60%, transparent);
+    }
+
+    .dress-overlay--bottom {
+      justify-content: end;
+    }
+
+    .dress-section-title {
+      font-family: "Cormorant Garamond", serif;
+      text-transform: uppercase;
+      letter-spacing: 0.22rem;
+      font-size: clamp(1.15rem, 4.8vw, 1.35rem);
+      color: #fff;
+      margin-bottom: 4px;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .dress-section-sub {
+      color: #f0f0f0;
+      font-size: 0.82rem;
+      font-style: italic;
+      letter-spacing: 0.03rem;
+      text-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
     }
 
     .dress-label {
@@ -905,14 +921,16 @@
     </section>
 
     <section class="card dress-card">
-      <h2>Motif attendu</h2>
-      <p class="dress-subtitle">Voici les motifs recommandés pour chaque côté.</p>
       <div class="dress-grid">
         <article class="dress-item">
           <div class="dress-img-wrap">
             <img src="./assets/motif-homme.png" alt="Motif vestimentaire côté homme">
           </div>
-          <div class="dress-overlay">
+          <div class="dress-overlay dress-overlay--top">
+            <p class="dress-section-title">Motif attendu</p>
+            <p class="dress-section-sub">Voici les motifs recommandés pour chaque côté.</p>
+          </div>
+          <div class="dress-overlay dress-overlay--bottom">
             <p class="dress-label">Côté homme</p>
             <p class="dress-note">Tenue recommandée : Wax motif homme</p>
           </div>
@@ -924,7 +942,7 @@
           <div class="dress-img-wrap">
             <img src="./assets/motif-femme.png" alt="Motif vestimentaire côté femme">
           </div>
-          <div class="dress-overlay">
+          <div class="dress-overlay dress-overlay--bottom">
             <p class="dress-label">Côté femme</p>
             <p class="dress-note">Tenue recommandée : Wax motif femme</p>
           </div>
