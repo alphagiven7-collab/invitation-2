@@ -523,10 +523,9 @@
       background: #fcfafa;
       border: 1px solid #e8dddd;
       border-radius: 18px;
-      padding: 20px 16px 16px;
+      padding: 24px 20px 20px;
       display: flex;
       flex-direction: column;
-      height: 100%;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
@@ -536,16 +535,21 @@
       box-shadow: 0 12px 32px rgba(0, 0, 0, 0.10);
     }
 
+    .dress-header {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
     .dress-label {
       font-family: "Cormorant Garamond", serif;
       text-transform: uppercase;
       letter-spacing: 0.18rem;
-      font-size: 1.15rem;
-      margin-bottom: 14px;
+      font-size: 1.2rem;
       color: #1a1a1a;
       position: relative;
       display: inline-block;
-      padding-bottom: 8px;
+      padding-bottom: 10px;
+      margin-bottom: 6px;
     }
 
     .dress-label::after {
@@ -560,11 +564,21 @@
       border-radius: 2px;
     }
 
+    .dress-note {
+      text-align: center;
+      color: #5a5252;
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.03rem;
+      margin-top: 4px;
+    }
+
     .dress-img-wrap {
       width: 100%;
       border-radius: 12px;
       overflow: hidden;
       background: #f0ebeb;
+      flex: 1;
     }
 
     .dress-item img {
@@ -574,18 +588,23 @@
       object-fit: contain;
     }
 
-    .dress-note {
-      margin-top: 12px;
-      text-align: center;
-      color: #5a5252;
-      font-size: 0.85rem;
-      font-weight: 400;
-      letter-spacing: 0.02rem;
-    }
-
     @media (max-width: 560px) {
       .dress-grid {
         grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .dress-item {
+        padding: 20px 16px 18px;
+      }
+
+      .dress-header {
+        margin-bottom: 14px;
+      }
+
+      .dress-label {
+        font-size: 1.1rem;
+        letter-spacing: 0.14rem;
       }
     }
 
@@ -872,18 +891,22 @@
       <p class="dress-subtitle">Voici les motifs recommandés pour chaque côté.</p>
       <div class="dress-grid">
         <article class="dress-item">
-          <p class="dress-label">Côté homme</p>
+          <div class="dress-header">
+            <p class="dress-label">Côté homme</p>
+            <p class="dress-note">Tenue recommandée : Wax motif homme</p>
+          </div>
           <div class="dress-img-wrap">
             <img src="./assets/motif-homme.png" alt="Motif vestimentaire côté homme">
           </div>
-          <p class="dress-note">Tenue recommandée : Wax motif homme</p>
         </article>
         <article class="dress-item">
-          <p class="dress-label">Côté femme</p>
+          <div class="dress-header">
+            <p class="dress-label">Côté femme</p>
+            <p class="dress-note">Tenue recommandée : Wax motif femme</p>
+          </div>
           <div class="dress-img-wrap">
             <img src="./assets/motif-femme.png" alt="Motif vestimentaire côté femme">
           </div>
-          <p class="dress-note">Tenue recommandée : Wax motif femme</p>
         </article>
       </div>
     </section>
