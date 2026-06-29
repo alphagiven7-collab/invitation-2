@@ -29,7 +29,57 @@
       --danger: #a70000;
       --later: #2a2a31;
       --card: #ffffff;
+      --toggle-bg: #efe7e7;
+      --toggle-icon: #5a4f4f;
+      --hero-shadow: rgba(0, 0, 0, 0.15);
     }
+
+    body.dark-mode {
+      --bg: #1a1818;
+      --text: #e8e2e2;
+      --muted: #a09595;
+      --line: #3d3535;
+      --accent: #3bbfcc;
+      --danger: #e05555;
+      --later: #555566;
+      --card: #252121;
+      --toggle-bg: #3a3333;
+      --toggle-icon: #d4caca;
+      --hero-shadow: rgba(0, 0, 0, 0.45);
+    }
+
+    body.dark-mode .save-date-card { background: #2a2525; }
+    body.dark-mode .save-date-card::before,
+    body.dark-mode .save-date-card::after { color: #3d3535; opacity: 0.4; }
+    body.dark-mode .calendar-head span { color: #c0b6b6; }
+    body.dark-mode .calendar-days span { color: #ddd6d6; }
+    body.dark-mode .calendar-days .heart::before { color: #6f6464; }
+    body.dark-mode .calendar-days .heart::after { background: #4a4040; }
+    body.dark-mode .save-script { color: #f0e8e8; }
+    body.dark-mode .save-subnote { color: #a89e9e; }
+    body.dark-mode .couple-name { color: #ede4e4; }
+    body.dark-mode .count-item { background: #2e2929; border-color: #403838; }
+    body.dark-mode .count-item small { color: #a89e9e; }
+    body.dark-mode .count-item span { color: #e8e0e0; }
+    body.dark-mode .dress-item { background: #2b2626; border-color: #3d3535; }
+    body.dark-mode .dress-label { color: #e8e0e0; }
+    body.dark-mode .dress-img-wrap { background: #1f1b1b; }
+    body.dark-mode .dress-note { color: #b5aaaa; }
+    body.dark-mode .card { border-color: #3d3535; }
+    body.dark-mode .program-details-card { border-color: #3d3535; }
+    body.dark-mode .program-detail-item { border-color: #3d3535; }
+    body.dark-mode .detail-text strong { color: #a09595; }
+    body.dark-mode .detail-text span { color: #e0d8d8; }
+    body.dark-mode .rsvp-title { color: #b5aaaa; }
+    body.dark-mode .input { background: #2e2929; border-color: #4a4040; color: #e0d8d8; }
+    body.dark-mode .rsvp-target label { background: #2b2626; border-color: #4a4040; color: #d4caca; }
+    body.dark-mode .rsvp-target input:checked + label { background: #3bbfcc; border-color: #3bbfcc; color: #fff; }
+    body.dark-mode .message.success { background: #1d3533; color: #7dd4cc; border-color: #2d5550; }
+    body.dark-mode .lead { color: #a09595; }
+    body.dark-mode .script { color: #e0d8d8; }
+    body.dark-mode .gallery img { filter: brightness(0.92); }
+    body.dark-mode .footer-note { color: #8a7e7e; }
+    body.dark-mode .program-overlay { background: linear-gradient(to top, rgba(0,0,0,0.92), rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.35)); }
 
     * {
       box-sizing: border-box;
@@ -48,6 +98,7 @@
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      transition: background 0.35s ease, color 0.35s ease;
     }
 
     .container {
@@ -517,8 +568,6 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
       align-items: start;
-      max-width: 600px;
-      margin: 0 auto;
     }
 
     .dress-item {
@@ -588,7 +637,6 @@
     @media (max-width: 560px) {
       .dress-grid {
         grid-template-columns: 1fr;
-        max-width: 380px;
       }
     }
 
@@ -713,6 +761,56 @@
       line-height: 1.35;
     }
 
+    .dark-toggle-wrap {
+      text-align: right;
+      padding: 12px 16px 0;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    .dark-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--toggle-bg);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 14px 8px 12px;
+      cursor: pointer;
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.04rem;
+      text-transform: uppercase;
+      color: var(--toggle-icon);
+      transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+      user-select: none;
+    }
+
+    .dark-toggle:hover {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .dark-toggle .toggle-dot {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .dark-toggle .toggle-label {
+      transition: opacity 0.3s ease;
+    }
+
+    .dark-toggle.active .toggle-dot {
+      transform: translateX(0);
+      background: #f0d060;
+    }
+
     @page {
       size: A4;
       margin: 10mm;
@@ -756,6 +854,12 @@
 </head>
 <body>
   <main class="container">
+    <div class="dark-toggle-wrap">
+      <div id="darkToggle" class="dark-toggle" role="button" tabindex="0" aria-label="Activer le mode sombre">
+        <span class="toggle-dot"></span>
+        <span class="toggle-label">Nuit</span>
+      </div>
+    </div>
     <section class="hero">
       <img src="./assets/hero-couple.jpg" alt="Photo du couple">
       <div class="hero-overlay">
@@ -984,6 +1088,32 @@
         messageBox.textContent = `Merci ${guestName}. Votre message est préparé avec respect et redirection en cours vers WhatsApp (${recipient.label}).`;
         window.open(whatsappUrl, "_blank");
       });
+    });
+
+    const darkToggle = document.getElementById("darkToggle");
+    const toggleLabel = darkToggle.querySelector(".toggle-label");
+
+    function setDarkMode(isDark) {
+      document.body.classList.toggle("dark-mode", isDark);
+      darkToggle.classList.toggle("active", isDark);
+      toggleLabel.textContent = isDark ? "Jour" : "Nuit";
+      darkToggle.setAttribute("aria-label", isDark ? "Activer le mode jour" : "Activer le mode sombre");
+      localStorage.setItem("darkMode", isDark ? "true" : "false");
+    }
+
+    if (localStorage.getItem("darkMode") === "true") {
+      setDarkMode(true);
+    }
+
+    darkToggle.addEventListener("click", () => {
+      setDarkMode(!document.body.classList.contains("dark-mode"));
+    });
+
+    darkToggle.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        setDarkMode(!document.body.classList.contains("dark-mode"));
+      }
     });
 
     const targetDate = new Date("2026-07-18T00:00:00");
