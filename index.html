@@ -490,6 +490,12 @@
       object-position: center;
     }
 
+    .gallery img:last-child {
+      grid-column: 1 / -1;
+      aspect-ratio: 16 / 9;
+      object-position: center 22%;
+    }
+
     .dress-card h2 {
       margin-bottom: 8px;
     }
@@ -725,7 +731,7 @@
 <body>
   <main class="container">
     <section class="hero">
-      <img src="./assets/gallery-2.png" alt="Photo du couple">
+      <img src="./assets/hero-couple.jpg" alt="Photo du couple">
       <div class="hero-overlay">
         <div>
           <h1 class="hero-names">Manassé &<br>Vainqueur</h1>
@@ -787,8 +793,8 @@
               <div>
                 <h2 class="program-title">Programme</h2>
                 <p class="program-type">Soirée</p>
-                <p class="program-address">Croisement avenue Figuier et des Plaines, quartier Bel-Air C/Kampemba, Figuier numéro 15.</p>
-                <a class="program-map-btn" href="https://www.google.com/maps/search/?api=1&query=Croisement+avenue+Figuier+et+des+Plaines+Bel-Air+Kampemba+Lubumbashi" target="_blank" rel="noopener">
+                <p class="program-address">Salle chapiteau du bel air, croisement avenue figuier et des plaines, quartier bel air c/ kampemba, figuier numéro 15.</p>
+                <a class="program-map-btn" href="https://www.google.com/maps/search/?api=1&query=Salle+chapiteau+du+bel+air+figuier+Kampemba+Lubumbashi" target="_blank" rel="noopener">
                   <svg class="program-map-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   Voir sur Google Maps
                 </a>
@@ -812,7 +818,7 @@
             </span>
             <div class="detail-text">
               <strong>Lieu</strong>
-              <span>Figuier n°15, Q/Bel-Air, C/Kampemba, Lubumbashi</span>
+              <span>Salle chapiteau du bel air, Figuier n°15, Q/Bel-Air, C/Kampemba, Lubumbashi</span>
             </div>
           </div>
           <div class="program-detail-item">
@@ -831,9 +837,10 @@
     <section class="card">
       <h2>Notre Galerie</h2>
       <div class="gallery">
-        <img src="./assets/hero-couple.png" alt="Photo galerie 1">
+        <img src="./assets/hero-couple.jpg" alt="Photo galerie 1">
         <img src="./assets/gallery-2.png" alt="Photo galerie 2">
         <img src="./assets/program-couple.png" alt="Photo galerie 3">
+        <img src="./assets/hero-couple.png" alt="Photo galerie 4">
       </div>
     </section>
 
