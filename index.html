@@ -307,8 +307,15 @@
       border-radius: 0;
       overflow: hidden;
       position: relative;
-      height: clamp(145px, 36vw, 190px);
       box-shadow: 0 18px 36px rgba(0, 0, 0, 0.16);
+    }
+
+    .program-event img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center;
     }
 
     .program-icon {
@@ -334,10 +341,11 @@
       inset: 0;
       background: linear-gradient(to top, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.48) 52%, rgba(0, 0, 0, 0.22));
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 10px 12px;
+      padding: 16px 14px;
     }
 
     .program-title {
@@ -394,55 +402,48 @@
       margin-right: 4px;
     }
 
-    .program-details-card {
-      background: var(--card);
-      border: 1px solid #efe8e8;
-      border-radius: 18px;
-      padding: 16px 14px;
-      margin-top: 12px;
-      box-shadow: 0 6px 18px rgba(22, 15, 15, 0.06);
+    .program-info-list {
+      margin-top: 10px;
+      width: 100%;
+      max-width: 320px;
     }
 
-    .program-detail-item {
+    .program-info-item {
       display: flex;
       align-items: flex-start;
-      gap: 10px;
-      padding: 8px 0;
-      border-bottom: 1px solid #f0eaea;
+      gap: 8px;
+      padding: 5px 0;
+      text-align: left;
     }
 
-    .program-detail-item:last-child {
-      border-bottom: none;
-    }
-
-    .detail-icon {
+    .program-info-icon {
       flex-shrink: 0;
-      line-height: 1.4;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 24px;
-      height: 24px;
-      color: var(--accent);
+      width: 18px;
+      height: 18px;
+      color: #fff;
+      opacity: 0.85;
+      margin-top: 1px;
     }
 
-    .detail-text {
+    .program-info-text {
       display: flex;
       flex-direction: column;
-      font-size: 0.85rem;
-      line-height: 1.35;
+      font-size: 0.75rem;
+      line-height: 1.3;
+      color: #f4f4f4;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
     }
 
-    .detail-text strong {
-      font-size: 0.72rem;
+    .program-info-text strong {
+      font-size: 0.65rem;
       text-transform: uppercase;
-      letter-spacing: 0.08rem;
-      color: var(--muted);
+      letter-spacing: 0.06rem;
+      color: #ddd;
       margin-bottom: 1px;
     }
 
-    .detail-text span {
-      color: var(--text);
+    .program-info-text span {
+      color: #fff;
     }
 
     .countdown {
@@ -792,10 +793,6 @@
         print-color-adjust: exact;
       }
 
-      .program-event {
-        height: 170px;
-      }
-
       .btn {
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
@@ -875,37 +872,31 @@
                   Voir sur Google Maps
                 </a>
               </div>
+              <div class="program-info-list">
+                <div class="program-info-item">
+                  <svg class="program-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <div class="program-info-text">
+                    <strong>Horaire</strong>
+                    <span>18 juillet 2026 — Soirée</span>
+                  </div>
+                </div>
+                <div class="program-info-item">
+                  <svg class="program-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <div class="program-info-text">
+                    <strong>Lieu</strong>
+                    <span>Salle chapiteau du bel air, Figuier n°15, Q/Bel-Air, C/Kampemba, Lubumbashi</span>
+                  </div>
+                </div>
+                <div class="program-info-item">
+                  <svg class="program-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                  <div class="program-info-text">
+                    <strong>Tenue</strong>
+                    <span>Tenue de soirée / Wax recommandé</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </article>
-        </div>
-        <div class="program-details-card">
-          <div class="program-detail-item">
-            <span class="detail-icon">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </span>
-            <div class="detail-text">
-              <strong>Horaire</strong>
-              <span>18 juillet 2026 — Soirée</span>
-            </div>
-          </div>
-          <div class="program-detail-item">
-            <span class="detail-icon">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </span>
-            <div class="detail-text">
-              <strong>Lieu</strong>
-              <span>Salle chapiteau du bel air, Figuier n°15, Q/Bel-Air, C/Kampemba, Lubumbashi</span>
-            </div>
-          </div>
-          <div class="program-detail-item">
-            <span class="detail-icon">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-            </span>
-            <div class="detail-text">
-              <strong>Tenue</strong>
-              <span>Tenue de soirée / Wax recommandé</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
