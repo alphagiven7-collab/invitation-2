@@ -527,50 +527,13 @@
     }
 
     .dress-item {
-      background: #fcfafa;
+      position: relative;
+      overflow: hidden;
       border: none;
       border-radius: 0;
       padding: 0;
       display: flex;
       flex-direction: column;
-    }
-
-    .dress-header {
-      text-align: center;
-      padding: 22px 16px 14px;
-    }
-
-    .dress-label {
-      font-family: "Cormorant Garamond", serif;
-      text-transform: uppercase;
-      letter-spacing: 0.18rem;
-      font-size: 1.2rem;
-      color: #1a1a1a;
-      position: relative;
-      display: inline-block;
-      padding-bottom: 8px;
-      margin-bottom: 6px;
-    }
-
-    .dress-label::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 40px;
-      height: 1.5px;
-      background: var(--accent, #1f9daa);
-      border-radius: 2px;
-    }
-
-    .dress-note {
-      text-align: center;
-      color: #5a5252;
-      font-size: 0.82rem;
-      font-weight: 400;
-      letter-spacing: 0.03rem;
-      margin-top: 4px;
     }
 
     .dress-img-wrap {
@@ -585,6 +548,53 @@
       display: block;
       object-fit: cover;
       object-position: center;
+    }
+
+    .dress-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0.05));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: end;
+      text-align: center;
+      padding: 20px 16px;
+    }
+
+    .dress-label {
+      font-family: "Cormorant Garamond", serif;
+      text-transform: uppercase;
+      letter-spacing: 0.18rem;
+      font-size: 1.2rem;
+      color: #fff;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 8px;
+      margin-bottom: 6px;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .dress-label::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 1.5px;
+      background: #fff;
+      border-radius: 2px;
+    }
+
+    .dress-note {
+      text-align: center;
+      color: #f0f0f0;
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.03rem;
+      margin-top: 4px;
+      text-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
     }
 
     .rsvp-card h2 {
@@ -875,21 +885,21 @@
       <p class="dress-subtitle">Voici les motifs recommandés pour chaque côté.</p>
       <div class="dress-grid">
         <article class="dress-item">
-          <div class="dress-header">
-            <p class="dress-label">Côté homme</p>
-            <p class="dress-note">Tenue recommandée : Wax motif homme</p>
-          </div>
           <div class="dress-img-wrap">
             <img src="./assets/motif-homme.png" alt="Motif vestimentaire côté homme">
           </div>
+          <div class="dress-overlay">
+            <p class="dress-label">Côté homme</p>
+            <p class="dress-note">Tenue recommandée : Wax motif homme</p>
+          </div>
         </article>
         <article class="dress-item">
-          <div class="dress-header">
-            <p class="dress-label">Côté femme</p>
-            <p class="dress-note">Tenue recommandée : Wax motif femme</p>
-          </div>
           <div class="dress-img-wrap">
             <img src="./assets/motif-femme.png" alt="Motif vestimentaire côté femme">
+          </div>
+          <div class="dress-overlay">
+            <p class="dress-label">Côté femme</p>
+            <p class="dress-note">Tenue recommandée : Wax motif femme</p>
           </div>
         </article>
       </div>
