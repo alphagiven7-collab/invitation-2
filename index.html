@@ -504,12 +504,6 @@
       box-shadow: none;
       padding: 0;
       margin-bottom: 0;
-      width: 100vw;
-      position: relative;
-      left: 50%;
-      right: 50%;
-      margin-left: -50vw;
-      margin-right: -50vw;
     }
 
     .dress-card h2 {
@@ -725,8 +719,9 @@
       }
 
       .container {
-        max-width: 500px;
-        margin: 0 auto;
+        max-width: none;
+        width: 100%;
+        margin: 0;
         padding: 0 0 20px;
       }
 
@@ -736,6 +731,10 @@
         box-shadow: none !important;
         break-inside: avoid;
         page-break-inside: avoid;
+      }
+
+      .dress-card {
+        width: 100%;
       }
 
       img {
