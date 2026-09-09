@@ -845,13 +845,8 @@
     }
 
     @page {
-      size: A4;
-      margin: 10mm;
-    }
-
-    html.pdf-single-page,
-    body.pdf-single-page {
-      width: 500px;
+      size: 500px 900px;
+      margin: 0;
     }
 
     @media print {
@@ -1180,22 +1175,6 @@
       if (document.fonts && document.fonts.ready) {
         await document.fonts.ready;
       }
-
-      document.documentElement.classList.add("pdf-single-page");
-      document.body.classList.add("pdf-single-page");
-      await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
-
-      const pageHeightMm = Math.ceil(document.documentElement.scrollHeight * 25.4 / 96) + 4;
-      const printStyle = document.createElement("style");
-      printStyle.id = "pdf-single-page-style";
-      printStyle.textContent = `@page { size: 132.3mm ${pageHeightMm}mm; margin: 0; }`;
-      document.head.appendChild(printStyle);
-
-      window.addEventListener("afterprint", () => {
-        document.documentElement.classList.remove("pdf-single-page");
-        document.body.classList.remove("pdf-single-page");
-        printStyle.remove();
-      }, { once: true });
 
       window.print();
     });
