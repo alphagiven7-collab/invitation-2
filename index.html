@@ -874,8 +874,19 @@
       }
 
       img {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
+      }
+
+      .hero,
+      .program-event,
+      .dress-item,
+      .program-icon,
+      .dress-img-wrap {
+        overflow: visible !important;
       }
 
       .btn {
@@ -1071,11 +1082,13 @@
       const images = Array.from(document.images);
       await Promise.all(images.map((image) => {
         image.loading = "eager";
-        return image.complete
+        return image.complete && image.naturalWidth > 0
           ? Promise.resolve()
           : new Promise((resolve) => {
-              image.addEventListener("load", resolve, { once: true });
-              image.addEventListener("error", resolve, { once: true });
+              const finish = () => resolve();
+              image.addEventListener("load", finish, { once: true });
+              image.addEventListener("error", finish, { once: true });
+              setTimeout(finish, 5000);
             });
       }));
       if (document.fonts && document.fonts.ready) {
