@@ -889,7 +889,7 @@
 <body>
   <main class="container">
     <section class="hero">
-      <img src="./assets/DM.jpg.jpeg" alt="Photo de Gloria Kasongo">
+      <img src="./assets/DM-web.jpg" alt="Photo de Gloria Kasongo">
       <div class="hero-overlay">
         <div>
           <h1 class="hero-names">Arcel Difasi &<br>Gloria Kasongo</h1>
@@ -950,7 +950,7 @@
         <div class="program-list">
           <article class="program-event">
             <div class="program-icon" aria-hidden="true">
-                <img src="./assets/H2A9568.jpg.jpeg" alt="Photo du couple pour le programme">
+                <img src="./assets/H2A9568-web.jpg" alt="Photo du couple pour le programme">
             </div>
             <div class="program-overlay">
               <div>
@@ -992,10 +992,10 @@
     <section class="card">
       <h2>Notre Galerie</h2>
       <div class="gallery">
-        <img src="./assets/H2A9566.jpg.jpeg" alt="Photo du couple - galerie 1" loading="lazy">
-        <img src="./assets/H2A9568.jpg.jpeg" alt="Photo du couple - galerie 2" loading="lazy">
-        <img src="./assets/DK.jpg.jpeg" alt="Photo d'Arcel Difasi - galerie" loading="lazy">
-        <img src="./assets/DM.jpg.jpeg" alt="Photo de Gloria Kasongo - galerie" loading="lazy">
+        <img src="./assets/H2A9566-web.jpg" alt="Photo du couple - galerie 1">
+        <img src="./assets/H2A9568-web.jpg" alt="Photo du couple - galerie 2">
+        <img src="./assets/DK-web.jpg" alt="Photo d'Arcel Difasi - galerie">
+        <img src="./assets/DM-web.jpg" alt="Photo de Gloria Kasongo - galerie">
       </div>
     </section>
 
@@ -1067,7 +1067,20 @@
   </main>
 
   <script>
-    document.getElementById("pdfDownloadBtn").addEventListener("click", () => {
+    document.getElementById("pdfDownloadBtn").addEventListener("click", async () => {
+      const images = Array.from(document.images);
+      await Promise.all(images.map((image) => {
+        image.loading = "eager";
+        return image.complete
+          ? Promise.resolve()
+          : new Promise((resolve) => {
+              image.addEventListener("load", resolve, { once: true });
+              image.addEventListener("error", resolve, { once: true });
+            });
+      }));
+      if (document.fonts && document.fonts.ready) {
+        await document.fonts.ready;
+      }
       window.print();
     });
 
