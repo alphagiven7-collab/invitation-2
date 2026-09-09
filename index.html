@@ -1,0 +1,1168 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitation | Arcel Difasi & Gloria Kasongo</title>
+  <meta name="description" content="Invitation de mariage coutumier - Arcel Difasi & Gloria Kasongo. Save the date, lieu et confirmation RSVP.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://invitation2-ashy.vercel.app/">
+  <meta property="og:title" content="Invitation | Arcel Difasi & Gloria Kasongo">
+  <meta property="og:description" content="Vous êtes cordialement invités à célébrer notre union. Cliquez pour voir le programme et confirmer votre présence.">
+  <meta property="og:image" content="https://invitation2-ashy.vercel.app/assets/hero-couple.png">
+  <meta property="og:image:secure_url" content="https://invitation2-ashy.vercel.app/assets/hero-couple.png">
+  <meta property="og:image:alt" content="Photo d'accueil du couple">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Invitation | Arcel Difasi & Gloria Kasongo">
+  <meta name="twitter:description" content="Invitation de mariage avec programme et RSVP.">
+  <meta name="twitter:image" content="https://invitation2-ashy.vercel.app/assets/hero-couple.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;700&family=Parisienne&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f2f5f7;
+      --text: #17191f;
+      --muted: #626875;
+      --line: #d8dfe5;
+      --accent: #5f91a0;
+      --danger: #b87480;
+      --later: #24262d;
+      --card: #fffdfd;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      background: radial-gradient(circle at 92% 0%, #f7e9ed 0, transparent 34%), radial-gradient(circle at 0% 46%, #e4f0f4 0, transparent 38%), var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 0 0 60px;
+    }
+
+    .hero {
+      border-radius: 0;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 22px 42px rgba(0, 0, 0, 0.15);
+      margin-bottom: 22px;
+    }
+
+    .hero img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center;
+      filter: contrast(1.04);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.08) 55%);
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      text-align: center;
+      padding: clamp(14px, 4vw, 26px) clamp(12px, 4vw, 18px);
+    }
+
+    .hero-names {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.9rem, 7vw, 3.2rem);
+      color: #fff;
+      line-height: 1;
+      letter-spacing: 0.02rem;
+      margin-bottom: 10px;
+      text-transform: none;
+      font-weight: 600;
+      text-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    }
+
+    .hero-date {
+      color: #f4f4f4;
+      font-size: 0.78rem;
+      letter-spacing: 0.1rem;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid #efe8e8;
+      border-radius: 24px;
+      padding: 24px 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 10px 28px rgba(22, 15, 15, 0.06);
+    }
+
+    h2 {
+      font-family: "Cormorant Garamond", serif;
+      text-transform: uppercase;
+      letter-spacing: 0.16rem;
+      font-size: clamp(1.15rem, 4.8vw, 1.35rem);
+      margin-bottom: 14px;
+      text-align: center;
+      font-weight: 600;
+      color: #292526;
+    }
+
+    .script {
+      font-family: "Parisienne", cursive;
+      font-size: clamp(2rem, 7.2vw, 3rem);
+      text-align: center;
+      margin-bottom: 14px;
+      color: #1e1e1e;
+      line-height: 1.1;
+    }
+
+    .lead {
+      text-align: center;
+      color: var(--muted);
+      font-size: clamp(0.88rem, 3.5vw, 0.95rem);
+      line-height: 1.65;
+      margin: 0 auto 14px;
+      max-width: 390px;
+    }
+
+    .line {
+      width: 100%;
+      max-width: 320px;
+      height: 1px;
+      background: var(--line);
+      margin: 12px auto 18px;
+    }
+
+    .save-date-card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(145deg, #edf5f7 0%, #fffdfd 48%, #f8edef 100%);
+      border: 1px solid rgba(95, 145, 160, 0.16);
+      box-shadow: 0 14px 32px rgba(95, 145, 160, 0.1);
+    }
+
+    .save-date-card::before,
+    .save-date-card::after {
+      position: absolute;
+      font-family: "Cormorant Garamond", serif;
+      color: #9ab6bf;
+      opacity: 0.32;
+      z-index: 0;
+      line-height: 0.8;
+      pointer-events: none;
+    }
+
+    .save-date-card::before {
+      content: "A";
+      left: -16px;
+      bottom: -58px;
+      font-size: 230px;
+    }
+
+    .save-date-card::after {
+      content: "G";
+      right: -18px;
+      top: -58px;
+      font-size: 230px;
+    }
+
+    .save-date-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .month-title {
+      text-align: center;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.9rem;
+      letter-spacing: 0.16rem;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      font-weight: 600;
+      color: #2b3940;
+    }
+
+    .calendar-head,
+    .calendar-days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 2px;
+      max-width: 360px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .calendar-head span {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #66818a;
+      letter-spacing: 0.02rem;
+    }
+
+    .calendar-days span {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.88rem;
+      line-height: 1.3;
+      color: #242a2f;
+      position: relative;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      transition: color 0.18s ease, transform 0.18s ease;
+    }
+
+    .calendar-days span:not(.heart):hover {
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .calendar-days .heart {
+      overflow: visible;
+    }
+
+    .calendar-days .heart::before {
+      content: "♡";
+      position: absolute;
+      font-size: 3.15rem;
+      top: -14px;
+      color: #b87480;
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 400;
+    }
+
+    .calendar-days .heart::after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 34px;
+      background: #b8abab;
+      top: 48px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .save-script {
+      text-align: center;
+      font-family: "Parisienne", cursive;
+      font-size: clamp(3.2rem, 10vw, 4.3rem);
+      color: #24262d;
+      line-height: 0.95;
+      margin: 44px 0 8px;
+      text-shadow: 0 4px 14px rgba(184, 116, 128, 0.12);
+    }
+
+    .save-subnote {
+      text-align: center;
+      font-family: "Cormorant Garamond", serif;
+      text-transform: uppercase;
+      letter-spacing: 0.08rem;
+      font-size: 1.02rem;
+      color: #4f4a4a;
+      margin-bottom: 22px;
+    }
+
+    .couple-name {
+      text-align: center;
+      font-size: clamp(1.6rem, 6vw, 2rem);
+      font-family: "Cormorant Garamond", serif;
+      letter-spacing: 0.08rem;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .family-list p {
+      text-align: center;
+      margin-bottom: 8px;
+      font-size: 0.98rem;
+    }
+
+    .family-list strong {
+      font-weight: 600;
+      letter-spacing: 0.04rem;
+    }
+
+    .program-card {
+      position: relative;
+      overflow: hidden;
+      padding: 0;
+      border: none;
+      background: transparent;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .program-content {
+      position: relative;
+      z-index: 0;
+    }
+
+    .program-list {
+      display: block;
+    }
+
+    .program-event {
+      text-align: center;
+      border-radius: 26px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 22px 44px rgba(22, 15, 15, 0.2);
+      background: #242022;
+    }
+
+    .program-event img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center 28%;
+    }
+
+    .program-icon {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 0;
+      overflow: hidden;
+      margin: 0;
+      box-shadow: none;
+    }
+
+    .program-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: none;
+    }
+
+    .program-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(16, 13, 15, 0.84), rgba(20, 17, 19, 0.38) 52%, rgba(20, 17, 19, 0.04)), linear-gradient(135deg, rgba(31, 157, 170, 0.16), transparent 58%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      padding: 32px 18px 22px;
+    }
+
+    .program-title {
+      color: #fff;
+      text-align: center;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.6rem, 6vw, 2.15rem);
+      letter-spacing: 0.08rem;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      font-weight: 600;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+    }
+
+    .program-title::after {
+      content: "";
+      display: block;
+      width: 44px;
+      height: 2px;
+      margin: 10px auto 0;
+      background: var(--accent);
+    }
+
+    .program-type {
+      font-size: clamp(1.8rem, 7.5vw, 2.4rem);
+      line-height: 0.9;
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #fff;
+      text-shadow: 0 4px 14px rgba(0, 0, 0, 0.32);
+    }
+
+    .program-address {
+      color: #f4f4f4;
+      font-size: clamp(0.78rem, 3vw, 0.92rem);
+      line-height: 1.5;
+      max-width: 92%;
+      margin: 0 auto;
+      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.32);
+    }
+
+    .program-map-btn {
+      display: inline-block;
+      margin-top: 2px;
+      padding: 10px 18px;
+      background: rgba(31, 157, 170, 0.88);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.32);
+      border-radius: 999px;
+      color: #fff;
+      font-size: clamp(0.75rem, 2.8vw, 0.85rem);
+      text-decoration: none;
+      letter-spacing: 0.03rem;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .program-map-btn:hover {
+      background: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .program-map-icon {
+      font-size: 1.1rem;
+      margin-right: 5px;
+    }
+
+    .program-info-list {
+      margin-top: 14px;
+      width: 100%;
+      max-width: 360px;
+      background: rgba(20, 18, 19, 0.32);
+      backdrop-filter: blur(10px);
+      border-radius: 18px;
+      padding: 10px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+    }
+
+    .program-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      text-align: left;
+    }
+
+    .program-info-item:not(:last-child) {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .program-info-icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      color: var(--accent);
+      opacity: 1;
+      margin-top: 2px;
+    }
+
+    .program-info-text {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .program-info-text strong {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08rem;
+      color: var(--accent);
+      margin-bottom: 2px;
+      font-weight: 600;
+    }
+
+    .program-info-text span {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .count-item {
+      background: #fbf5f7;
+      border: 1px solid #eadfdf;
+      border-radius: 14px;
+      text-align: center;
+      padding: 12px 8px;
+    }
+
+    .count-item span {
+      display: block;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.9rem;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+
+    .count-item small {
+      text-transform: uppercase;
+      letter-spacing: 0.05rem;
+      font-size: 0.67rem;
+      color: #6b6464;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 8px 18px rgba(22, 15, 15, 0.1);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .gallery img:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 24px rgba(22, 15, 15, 0.16);
+    }
+
+    .gallery img:first-child,
+    .gallery img:last-child {
+      grid-column: 1 / -1;
+      aspect-ratio: 16 / 10;
+    }
+
+    .gallery img:first-child {
+      object-position: center 34%;
+    }
+
+    .gallery img:last-child {
+      object-position: center 28%;
+    }
+
+    .dress-card {
+      text-align: center;
+      border-radius: 0;
+      border: none;
+      background: transparent;
+      box-shadow: none;
+      padding: 0;
+      margin-bottom: 0;
+    }
+
+    .dress-card {
+      margin-top: -16px;
+    }
+
+    .dress-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .dress-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 16px 24px;
+      background: linear-gradient(90deg, #f7f4f5, #eef5f7, #f7f4f5);
+    }
+
+    .dress-divider::before,
+    .dress-divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #d6cfcf, transparent);
+    }
+
+    .dress-divider-icon {
+      font-family: "Parisienne", cursive;
+      font-size: 1.4rem;
+      color: #b8abab;
+      line-height: 1;
+    }
+
+    .dress-item {
+      position: relative;
+      overflow: hidden;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dress-img-wrap {
+      width: 100%;
+      overflow: hidden;
+      background: #f0ebeb;
+    }
+
+    .dress-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .dress-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0.05));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px 16px;
+    }
+
+    .dress-overlay--top {
+      justify-content: start;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1) 60%, transparent);
+    }
+
+    .dress-overlay--bottom {
+      justify-content: end;
+    }
+
+    .dress-section-title {
+      font-family: "Cormorant Garamond", serif;
+      text-transform: uppercase;
+      letter-spacing: 0.22rem;
+      font-size: clamp(1.15rem, 4.8vw, 1.35rem);
+      color: #fff;
+      margin-bottom: 4px;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .dress-section-sub {
+      color: #f0f0f0;
+      font-size: 0.82rem;
+      font-style: italic;
+      letter-spacing: 0.03rem;
+      text-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+    }
+
+    .dress-label {
+      font-family: "Cormorant Garamond", serif;
+      text-transform: uppercase;
+      letter-spacing: 0.18rem;
+      font-size: 1.2rem;
+      color: #fff;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 8px;
+      margin-bottom: 6px;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .dress-label::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 1.5px;
+      background: #fff;
+      border-radius: 2px;
+    }
+
+    .dress-note {
+      text-align: center;
+      color: #f0f0f0;
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.03rem;
+      margin-top: 4px;
+      text-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+    }
+
+    .rsvp-card h2 {
+      margin-bottom: 6px;
+      font-size: clamp(1.45rem, 5vw, 1.8rem);
+    }
+
+    .rsvp-title {
+      text-align: center;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.08rem;
+      letter-spacing: 0.02rem;
+      color: #5f5959;
+      margin-bottom: 18px;
+    }
+
+    .input {
+      width: 100%;
+      padding: 13px 14px;
+      border-radius: 12px;
+      border: 1px solid #ded5d5;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+      background: #fdfbfb;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    .input:focus {
+      border-color: var(--accent);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(31, 157, 170, 0.12);
+    }
+
+    .rsvp-targets {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .rsvp-target {
+      position: relative;
+    }
+
+    .rsvp-target input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .rsvp-target label {
+      display: block;
+      text-align: center;
+      border: 1px solid #ded5d5;
+      background: #fdfbfb;
+      color: #3d3d3d;
+      border-radius: 12px;
+      padding: 11px 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+    }
+
+    .rsvp-target input:checked + label {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+      box-shadow: 0 7px 16px rgba(31, 157, 170, 0.2);
+    }
+
+    .rsvp-target label:hover {
+      transform: translateY(-1px);
+      border-color: var(--accent);
+    }
+
+    .btn-group {
+      display: grid;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .btn {
+      border: none;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.92rem;
+      padding: 13px 12px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.18s ease, opacity 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.96;
+      box-shadow: 0 8px 18px rgba(22, 15, 15, 0.14);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn-confirm {
+      background: var(--accent);
+      box-shadow: 0 8px 18px rgba(31, 157, 170, 0.2);
+    }
+
+    .btn-decline {
+      background: #fff;
+      color: var(--danger);
+      border: 1px solid #e8caca;
+    }
+
+    .btn-later {
+      background: #f1eeee;
+      color: #4c4646;
+    }
+
+    .message {
+      margin-top: 14px;
+      border-radius: 12px;
+      padding: 11px 12px;
+      font-size: 0.86rem;
+      line-height: 1.45;
+      display: none;
+    }
+
+    .message.success {
+      display: block;
+      background: #e7f7f5;
+      color: #0e746f;
+      border: 1px solid #bce4df;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.76rem;
+      color: #777070;
+      margin-top: 12px;
+      line-height: 1.35;
+    }
+
+    @page {
+      size: A4;
+      margin: 10mm;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .container {
+        max-width: none;
+        width: 100%;
+        margin: 0;
+        padding: 0 0 20px;
+      }
+
+      .hero,
+      .card,
+      .program-event {
+        box-shadow: none !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .dress-card {
+        width: 100%;
+      }
+
+      img {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .btn {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <img src="./assets/DM.jpg.jpeg" alt="Photo de Gloria Kasongo">
+      <div class="hero-overlay">
+        <div>
+          <h1 class="hero-names">Arcel Difasi &<br>Gloria Kasongo</h1>
+          <p class="hero-date">Dimanche 04 octobre 2026 — 16H30</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card save-date-card">
+      <div class="save-date-content">
+        <h2 class="month-title">Octobre</h2>
+        <div class="calendar-head">
+          <span>Lun</span><span>Mar</span><span>Mer</span><span>Jeu</span><span>Ven</span><span>Sam</span><span>Dim</span>
+        </div>
+        <div class="calendar-days">
+          <span></span><span></span><span></span><span>1</span><span>2</span><span>3</span><span class="heart">4</span>
+          <span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span>
+          <span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span>
+          <span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span>
+          <span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span></span>
+        </div>
+        <p class="save-script">Save the date</p>
+        <p class="save-subnote">Au mariage coutumier</p>
+        <p class="lead"><strong>04 octobre 2026 — Mariage coutumier — 16H30</strong></p>
+        <p class="lead">Les familles d'Arcel Difasi et de Gloria Kasongo ont le réel plaisir de vous convier au mariage coutumier de leurs enfants.</p>
+        <p class="couple-name">Arcel Difasi <span>&</span> Gloria Kasongo</p>
+        <div class="line"></div>
+        <p class="lead">qui sera célébré le <strong>04 octobre 2026 à 16H30</strong></p>
+        <p class="lead">Parce que nous nous aimons, parce que nous avons décidé de nous dire oui, parce qu'il est temps maintenant.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Compte à rebours</h2>
+      <p class="dress-subtitle">Plus que quelques instants avant le grand jour.</p>
+      <div class="countdown" id="countdown">
+        <div class="count-item">
+          <span id="cdDays">00</span>
+          <small>Jours</small>
+        </div>
+        <div class="count-item">
+          <span id="cdHours">00</span>
+          <small>Heures</small>
+        </div>
+        <div class="count-item">
+          <span id="cdMinutes">00</span>
+          <small>Minutes</small>
+        </div>
+        <div class="count-item">
+          <span id="cdSeconds">00</span>
+          <small>Secondes</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="card program-card">
+      <div class="program-content">
+        <div class="program-list">
+          <article class="program-event">
+            <div class="program-icon" aria-hidden="true">
+                <img src="./assets/H2A9568.jpg.jpeg" alt="Photo du couple pour le programme">
+            </div>
+            <div class="program-overlay">
+              <div>
+                <h2 class="program-title">Programme</h2>
+                <a class="program-map-btn" href="https://www.google.com/maps/search/?api=1&query=Espace+vert+Tic-Tac+08+avenue+Russel+Plateau+Karavia" target="_blank" rel="noopener">
+                  <svg class="program-map-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Voir sur Google Maps
+                </a>
+              </div>
+              <div class="program-info-list">
+                <div class="program-info-item">
+                  <svg class="program-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <div class="program-info-text">
+                    <strong>Horaire</strong>
+                    <span>04 octobre 2026 — 16H30</span>
+                  </div>
+                </div>
+                <div class="program-info-item">
+                  <svg class="program-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <div class="program-info-text">
+                    <strong>Lieu</strong>
+                    <span>Espace vert Tic-Tac, 08, avenue Russel, Plateau Karavia. Référence : Kin Marché poids lourds</span>
+                  </div>
+                </div>
+                <div class="program-info-item">
+                  <svg class="program-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                  <div class="program-info-text">
+                    <strong>Tenue</strong>
+                    <span>Thème : pagne hollandais</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Notre Galerie</h2>
+      <div class="gallery">
+        <img src="./assets/H2A9566.jpg.jpeg" alt="Photo du couple - galerie 1" loading="lazy">
+        <img src="./assets/H2A9568.jpg.jpeg" alt="Photo du couple - galerie 2" loading="lazy">
+        <img src="./assets/DK.jpg.jpeg" alt="Photo d'Arcel Difasi - galerie" loading="lazy">
+        <img src="./assets/DM.jpg.jpeg" alt="Photo de Gloria Kasongo - galerie" loading="lazy">
+      </div>
+    </section>
+
+    <section class="card dress-card">
+      <div class="dress-grid">
+        <article class="dress-item">
+          <div class="dress-img-wrap">
+            <img src="./assets/motif-client-1.jpeg" alt="Motif pagne hollandais côté homme">
+          </div>
+          <div class="dress-overlay dress-overlay--top">
+            <p class="dress-section-title">Motif attendu</p>
+            <p class="dress-section-sub">Voici les motifs recommandés pour chaque côté.</p>
+          </div>
+          <div class="dress-overlay dress-overlay--bottom">
+            <p class="dress-label">Côté homme</p>
+            <p class="dress-note">Tenue recommandée : pagne hollandais</p>
+          </div>
+        </article>
+        <div class="dress-divider">
+          <span class="dress-divider-icon">&</span>
+        </div>
+        <article class="dress-item">
+          <div class="dress-img-wrap">
+            <img src="./assets/motif-client-2.jpeg" alt="Motif pagne hollandais côté femme">
+          </div>
+          <div class="dress-overlay dress-overlay--bottom">
+            <p class="dress-label">Côté femme</p>
+            <p class="dress-note">Tenue recommandée : pagne hollandais</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="card rsvp-card">
+      <h2>RSVP</h2>
+      <p class="rsvp-title">Veuillez cliquer ci-dessous pour répondre</p>
+      <input id="guestName" class="input" type="text" placeholder="Votre nom complet">
+      <p class="dress-subtitle" style="margin-bottom:8px;">Veuillez choisir la famille à contacter :</p>
+      <div class="rsvp-targets" role="radiogroup" aria-label="Choisir le destinataire">
+        <div class="rsvp-target">
+          <input id="targetHomme" type="radio" name="rsvpTarget" value="homme">
+          <label for="targetHomme">Côté homme</label>
+        </div>
+        <div class="rsvp-target">
+          <input id="targetFemme" type="radio" name="rsvpTarget" value="femme">
+          <label for="targetFemme">Côté femme</label>
+        </div>
+      </div>
+      <div class="btn-group">
+        <button class="btn btn-confirm" data-choice="Je confirme ma présence">Je confirme ma présence</button>
+        <button class="btn btn-decline" data-choice="Je ne pourrai pas être présent">Je ne pourrai pas être présent</button>
+        <button class="btn btn-later" data-choice="Je vais confirmer plus tard">Je vais confirmer plus tard</button>
+      </div>
+      <div id="responseMessage" class="message"></div>
+      <p class="footer-note">Merci de confirmer votre présence avec bienveillance. Votre message sera transmis au contact sélectionné.</p>
+    </section>
+
+    <div style="text-align:center;padding:0 20px 16px;">
+      <button id="pdfDownloadBtn" style="background:var(--accent);color:#fff;border:none;border-radius:999px;padding:10px 22px;font-size:0.82rem;font-weight:500;font-family:'Montserrat',sans-serif;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:transform 0.18s ease,opacity 0.18s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Télécharger en PDF
+      </button>
+    </div>
+
+    <footer style="text-align:center;padding:24px 16px 12px;font-size:0.72rem;color:#999292;line-height:1.4;">
+      <p style="margin:0;">Créé avec <span style="color:var(--danger);">❤</span> par <a href="https://invitation-mariage-orcin.vercel.app/" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;font-weight:500;">Alpha Web</a></p>
+      <p style="margin:4px 0 0;">Invitation de mariage — Arcel Difasi & Gloria Kasongo</p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("pdfDownloadBtn").addEventListener("click", () => {
+      window.print();
+    });
+
+    const buttons = document.querySelectorAll(".btn");
+    const guestNameInput = document.getElementById("guestName");
+    const messageBox = document.getElementById("responseMessage");
+    const targetInputs = document.querySelectorAll("input[name='rsvpTarget']");
+
+    const WHATSAPP_TARGETS = {
+      homme: {
+        label: "côté homme",
+        number: "243970930328"
+      },
+      femme: {
+        label: "côté femme",
+        number: "243977123776"
+      }
+    };
+
+    function getSelectedTarget() {
+      const selected = Array.from(targetInputs).find((input) => input.checked);
+      return selected ? selected.value : null;
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const guestName = guestNameInput.value.trim();
+        const choice = button.getAttribute("data-choice");
+        if (!guestName) {
+          messageBox.className = "message";
+          messageBox.style.display = "block";
+          messageBox.style.background = "#fdecec";
+          messageBox.style.color = "#a12a2a";
+          messageBox.style.border = "1px solid #f2c3c3";
+          messageBox.textContent = "Veuillez saisir votre nom complet avant de confirmer.";
+          return;
+        }
+
+        const selectedTarget = getSelectedTarget();
+        if (!selectedTarget) {
+          messageBox.className = "message";
+          messageBox.style.display = "block";
+          messageBox.style.background = "#fff4f5";
+          messageBox.style.color = "#9c5663";
+          messageBox.style.border = "1px solid #eccbd0";
+          messageBox.textContent = "Veuillez choisir le côté à contacter avant de confirmer.";
+          return;
+        }
+
+        const recipient = WHATSAPP_TARGETS[selectedTarget];
+        const rsvpText = `Bonjour,\nNous vous remercions humblement pour cette invitation.\nJe me nomme ${guestName}.\nMa réponse RSVP: ${choice}.\nContact sélectionné: ${recipient.label}.\nAvec nos salutations respectueuses.`;
+        const whatsappNumber = recipient.number;
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+          rsvpText
+        )}`;
+
+        messageBox.className = "message success";
+        messageBox.style.display = "";
+        messageBox.style.background = "";
+        messageBox.style.color = "";
+        messageBox.style.border = "";
+        messageBox.textContent = `Merci ${guestName}. Votre message est préparé avec respect et redirection en cours vers WhatsApp (${recipient.label}).`;
+        window.open(whatsappUrl, "_blank");
+      });
+    });
+
+    const targetDate = new Date("2026-10-04T16:30:00");
+    const cdDays = document.getElementById("cdDays");
+    const cdHours = document.getElementById("cdHours");
+    const cdMinutes = document.getElementById("cdMinutes");
+    const cdSeconds = document.getElementById("cdSeconds");
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate.getTime() - now.getTime();
+
+      if (diff <= 0) {
+        cdDays.textContent = "00";
+        cdHours.textContent = "00";
+        cdMinutes.textContent = "00";
+        cdSeconds.textContent = "00";
+        return;
+      }
+
+      const totalSeconds = Math.floor(diff / 1000);
+      const days = Math.floor(totalSeconds / (24 * 60 * 60));
+      const hours = Math.floor((totalSeconds % (24 * 60 * 60)) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      cdDays.textContent = String(days).padStart(2, "0");
+      cdHours.textContent = String(hours).padStart(2, "0");
+      cdMinutes.textContent = String(minutes).padStart(2, "0");
+      cdSeconds.textContent = String(seconds).padStart(2, "0");
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
